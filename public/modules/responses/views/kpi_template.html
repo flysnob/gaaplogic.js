@@ -1,0 +1,34 @@
+<div class="col-md-6">
+	<div class="radio" data-ng-repeat="obj in question.structure" >
+		<label>
+			<input name="answer" type="radio" ng-model="question.result" ng-click="showDatapoints(obj._id)" value="{{ obj._id }}" required>{{ obj.name }}
+		</label>
+	</div>
+</div>
+<div class="col-md-6" ng-hide="question.hide.components"e>
+	<div class="panel panel-info">
+		<div class="panel-heading">
+			<h4 class="panel-title">Numerator Components</h4>
+		</div>
+		<div class="panel-body">
+			<ul>
+				<li data-ng-repeat="numerator in question.numerators">{{ numerator.name }}</li>
+			</ul>
+		</div>
+	</div>
+	<div class="panel panel-info">
+		<div class="panel-heading">
+			<h4 class="panel-title">Denominator Components</h4>
+		</div>
+		<div class="panel-body">
+			<ul>
+				<li data-ng-repeat="denominator in question.denominators">{{ denominator.name }}</li>
+			</ul>
+		</div>
+	</div>
+	<div>
+		<div style="margin-left: 15px">
+			<button type="button" class="btn btn-default" ng-click="open()">Edit Components</button>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,93 @@
+<section data-ng-controller="PagesController">
+	<div class="page-header">
+		<h1>New Node Content</h1>
+	</div>
+	<div class="col-md-12">
+		<form name="pageForm" class="form-horizontal" data-ng-submit="create()" novalidate>
+			<fieldset>
+				<div class="row form-group form-group-sm">
+					<div class="col-md-3">
+						<div ng-class="{ 'has-error': questionForm.contentId.$dirty && questionForm.contentId.$invalid }">
+							<label class="control-label" for="contentId">Node ID</label>
+							<div class="controls">
+								<input name="contentId" data-ng-model="contentId" id="contentId" class="form-control" placeholder="Node ID" width="90%" required>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div ng-class="{ 'has-error': questionForm.projectType.$dirty && questionForm.projectType.$invalid }">
+							<label class="control-label" for="projectType">Content Type</label>
+							<div class="controls">
+								<select name="projectType" data-ng-model="projectType" id="projectType" class="form-control" ng-change="changeCreate()" required>
+									<option value="1">Derivatives</option>
+									<option value="2">VIEs</option>
+									<option value="3">Revenue Recognition</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row form-group">
+					<div class="col-md-6">
+						<div>
+							<label class="control-label" for="summary">Summary for UI</label>
+							<div class="controls">
+								<textarea name="summary" data-ng-model="summary" id="summary" class="form-control" cols="30" rows="5" placeholder="Summary for UI"></textarea>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div>
+							<label class="control-label" for="reportSummary">Summary for report</label>
+							<div class="controls">
+								<textarea name="reportSummary" data-ng-model="reportSummary" id="reportSummary" class="form-control" cols="30" rows="5" placeholder="Summary for report"></textarea>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row form-group">
+					<div class="col-md-6">
+						<div>
+							<label class="control-label" for="help">Help</label>
+							<div class="controls">
+								<textarea name="help" data-ng-model="help" id="help" class="form-control" cols="30" rows="5" placeholder="Help"></textarea>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div>
+							<label class="control-label" for="faq">FAQ</label>
+							<div class="controls">
+								<textarea name="faq" data-ng-model="faq" id="faq" class="form-control" cols="30" rows="5" placeholder="FAQ"></textarea>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row form-group">
+					<div class="col-md-6">
+						<div>
+							<label class="control-label" for="asc">ASC</label>
+							<div class="controls">
+								<textarea name="asc" data-ng-model="asc" id="asc" class="form-control" cols="30" rows="5" placeholder="ASC"></textarea>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div>
+							<label class="control-label" for="examples">Examples</label>
+							<div class="controls">
+								<textarea name="examples" data-ng-model="examples" id="examples" class="form-control" cols="30" rows="5" placeholder="Examples"></textarea>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<input type="submit" class="btn btn-default" value="Save">
+				</div>
+				<div data-ng-show="error" class="text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+</section>

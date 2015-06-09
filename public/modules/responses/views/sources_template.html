@@ -1,0 +1,30 @@
+<div class="col-md-8">
+	<div class="panel panel-info">
+		<div class="panel-heading">
+			<h4 class="panel-title">Numerator Components</h4>
+		</div>
+		<div class="form-horizontal panel-body">
+			<div class="form-group" data-ng-repeat="numerator in question.numerators">
+				<label class="control-label col-sm-4" for="numerator._id">{{ numerator.name }}</label>
+				<div class="controls col-sm-8">
+					<select data-ng-options="source.name for source in sourcesQuestion track by source._id" name="answer" id="numerator._id" data-ng-model="selection" ng-change="sync(numerator._id, selection)" ng-selected="isSelected(numerator._id)"  class="form-control" required>
+					</select>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-info" style="margin-top: 50px">
+		<div class="panel-heading">
+			<h4 class="panel-title">Denominator Components</h4>
+		</div>
+		<div class="form-horizontal panel-body">
+			<div class="form-group" data-ng-repeat="denominator in question.denominators">
+				<label class="control-label col-sm-4" for="denominator._id">{{ denominator.name }}</label>
+				<div class="controls col-sm-8">
+					<select data-ng-options="source.name for source in sourcesQuestion track by source._id" name="answer" id="denominator._id" data-ng-model="selection" ng-change="sync(denominator._id, selection)" ng-selected="isSelected(denominator._id)" class="form-control" required>
+					</select>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

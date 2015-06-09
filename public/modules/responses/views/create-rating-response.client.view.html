@@ -1,0 +1,70 @@
+<section data-ng-controller="ResponsesController" data-ng-init="getQuestion()">
+	<div class="page-header">
+		<h1 data-ng-bind="question.count"></h1>
+	</div>
+	<div class="col-md-12">
+		<p data-ng-bind="question.question"></p>
+	</div>
+	<div class="row">
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<form name="responseForm" class="form-horizontal" data-ng-submit="next(score)" novalidate>
+				<fieldset>
+				<!--
+					<div class="form-group" style="margin-left: 15px">
+						<label class="radio-inline">
+							<input type="radio" ng-model="score" value="0">0
+						</label>
+						<label class="radio-inline">
+							<input type="radio" ng-model="score" value="1">1
+						</label>
+						<label class="radio-inline">
+							<input type="radio" ng-model="score" value="2">2
+						</label>
+						<label class="radio-inline">
+							<input type="radio" ng-model="score" value="3">3
+						</label>
+						<label class="radio-inline">
+							<input type="radio" ng-model="score" value="4">4
+						</label>
+						<label class="radio-inline">
+							<input type="radio" ng-model="score" value="5">5
+						</label>
+						<label class="radio-inline">
+							<input type="radio" ng-model="score" value="6">6
+						</label>
+						<label class="radio-inline">
+							<input type="radio" ng-model="score" value="7">7
+						</label>
+						<label class="radio-inline">
+							<input type="radio" ng-model="score" value="8">8
+						</label>
+						<label class="radio-inline">
+							<input type="radio" ng-model="score" value="9">9
+						</label>
+						<label class="radio-inline">
+							<input type="radio" ng-model="score" value="10">10
+						</label>
+					</div>
+				-->
+					<div>
+						<label class="radio-inline">
+							<input data-ng-repeat="score in scores" type="radio" ng-model="score" value="{{ value }}" ng-bind="label">
+						</label>
+						</div>
+					</div>
+					<div>
+						<div class="form-group" style="margin-left: 15px">
+							<input type="submit" class="btn btn-default" value="Next">
+						</div>
+					</div>
+					<div data-ng-show="error" class="text-danger">
+						<strong data-ng-bind="error"></strong>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+		<div class="col-md-1"></div>
+	</div>
+</section>

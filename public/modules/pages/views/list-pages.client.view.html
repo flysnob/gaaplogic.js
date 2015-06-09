@@ -1,0 +1,31 @@
+<section data-ng-controller="PagesController" data-ng-init="find()">
+	<div class="page-header">
+		<h1>Node Content</h1>
+	</div>
+	<div class="row">
+		<div class="col-md-3">
+			<a class="button-btn" href="/#!/pages/create">Add new node content</a>
+		</div>
+		<!--
+		<div class="col-md-3">
+			<button class="btn btn-default" data-ng-click="assignType()">Add Project Type to Questions</button>
+		</div>
+		-->
+	</div>
+	<div class="list-group">
+		<a data-ng-repeat="page in pages" data-ng-href="#!/pages/{{page._id}}" class="list-group-item">
+			<small class="list-group-item-text">
+				Posted on
+				<span data-ng-bind="page.created | date:'mediumDate'"></span>
+				by
+				<span data-ng-bind="page.user.displayName"></span>
+			</small>
+			<h4 class="list-group-item-heading" data-ng-bind="page.contentId"></h4>
+			<p class="list-group-item-text" data-ng-bind="page.projectType"></p>
+			<p class="list-group-item-text" data-ng-bind="page.summary"></p>
+		</a>
+	</div>
+	<div class="alert alert-warning text-center" data-ng-if="pages.$resolved && !pages.length">
+		No pages yet, why don't you <a href="/#!/pages/create">create one</a>?
+	</div>
+</section>

@@ -1,0 +1,7 @@
+<div <div class="col-md-6">
+	<div class="radio" data-ng-repeat="obj in question.structure" >
+		<label>
+			<input name="answer" type="radio" ng-model="question.result" value="{{ obj._id }}" required>{{ obj.name }}
+		</label>
+	</div>
+</div>

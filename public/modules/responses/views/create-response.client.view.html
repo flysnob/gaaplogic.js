@@ -1,0 +1,64 @@
+<section data-ng-controller="ResponsesController" data-ng-init="getQuestion()">
+	<div class="page-header">
+		<h1 data-ng-bind="question.count"></h1>
+	</div>
+	<div class="col-md-12">
+		<p data-ng-bind="question.question"></p>
+	</div>
+	<div class="row">
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<form name="responseForm" class="form-horizontal" data-ng-submit="next(result)" novalidate>
+				<fieldset>
+					<div class="form-group">
+						<div data-ng-show="question.show_1">
+							<label class="radio-inline">
+								<input name="response_1" type="radio" ng-model="result" value="{{ question.target_1 }}" required>{{ question.response_1 }}
+							</label>
+						</div>
+						<div data-ng-show="question.show_2">
+							<label class="radio-inline">
+								<input name="response_2" type="radio" ng-model="result" value="{{ question.target_2 }}" required>{{ question.response_2 }}
+							</label>
+						</div>
+						<div data-ng-show="question.show_3">
+							<label class="radio-inline">
+								<input name="response_3" type="radio" ng-model="result" value="{{ question.target_3 }}" required>{{ question.response_3 }}
+							</label>
+						</div>
+					</div>
+					<div>
+						<div class="form-group" style="margin-left: 15px">
+							<input type="submit" ng-disabled="responseForm.answer.$invalid" class="btn btn-default" value="Next">
+						</div>
+					</div>
+					<div data-ng-show="error" class="text-danger">
+						<strong data-ng-bind="error"></strong>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+	<div class="col-md-12 alert alert-info" role="alert" style="margin-top: 50px">
+		<p data-ng-bind="question.help"></p>
+	</div>
+</section>
+
+
+
+<div ng-controller="ResponsesController">
+    <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Edit Components</h3>
+        </div>
+        <div class="modal-body">
+            Code to allow user to edit KPI components to come!
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">OK</button>
+            <button class="btn btn-default" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+</div>
+

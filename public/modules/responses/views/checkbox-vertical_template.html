@@ -1,0 +1,5 @@
+<div data-ng-repeat="obj in question.structure" >
+	<label>
+		<input name="answer" type="checkbox" ng-model="question.result" value="{{ obj._id }}" required>{{ obj.name }}
+	</label>
+</div>
